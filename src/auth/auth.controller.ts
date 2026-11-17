@@ -19,4 +19,11 @@ export class AuthController {
     login (@Body() loginPayload: LoginUserDto) {
         return this.authService.login(loginPayload);
     }
+
+    @Post("refresh")
+    refreshToken (@Body('refreshToken') refreshToken: string) {
+        return this.authService.refreshToken(refreshToken);
+    }
+
+    
 }
